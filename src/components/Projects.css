@@ -1,0 +1,79 @@
+.text-image {
+  transform: translateY(-300px);
+  transition: transform 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .project:hover > div .text-image {
+    transform: translateY(0);
+  }
+
+  .project:hover img {
+    filter: sepia(1) saturate(0%) brightness(50%);
+  }
+
+  .project:hover > div div div {
+    transform: translateX(0);
+    transition-delay: 0.25s;
+  }
+
+  .tailwind {
+    transform: translateX(0) !important;
+    margin-left: 10px;
+  }
+
+  .jquery {
+    transform: translateX(0) !important;
+    margin-left: 10px;
+  }
+
+  .liquid {
+    transform: translateX(0) !important;
+    margin-left: 10px;
+  }
+
+  .react {
+    transform: translateX(0) !important;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project.clicked > div .text-image {
+    transform: translateY(0);
+  }
+
+  .project.clicked img {
+    filter: sepia(1) saturate(0%) brightness(50%);
+    opacity: 0.7;
+  }
+
+  .project.clicked > div div div {
+    transform: translateX(0);
+    transition-delay: 0.25s;
+  }
+
+  .tailwind {
+    transform: translateX(0) !important;
+    margin-left: 5px;
+  }
+
+  .jquery {
+    transform: translateX(0) !important;
+    margin-left: -65px;
+  }
+
+  .liquid {
+    transform: translateX(0) !important;
+    margin-left: 5px;
+  }
+
+  .react {
+    transform: translateX(0) !important;
+    margin-left: 5px;
+  }
+}
+
+.project-info {
+  transition: transform 0.5s ease-in-out;
+}
