@@ -178,7 +178,7 @@ function Projects() {
         </div>
         <div className="flex flex-col md:flex-row gap-3 md:gap-9 items-center">
           <a
-            href="https://airbnbclone.infinityfreeapp.com/"
+            href="https://mohamedsefyani-airbnb.web.app/"
             target="_blank"
             className="group text-sm md:text-lg text-white flex gap-2 items-center hover:text-indigo-500 transition-colors duration-500"
             rel="noopener noreferrer"
