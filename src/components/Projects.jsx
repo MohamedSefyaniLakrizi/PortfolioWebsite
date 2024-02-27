@@ -13,6 +13,7 @@ function Projects() {
       <div className="flex flex-col items-center mt-10 gap-10">
         <Project project="shopify_theme" />
         <Project project="airbnb_clone" />
+        <Project project="client_website" />
       </div>
     </section>
   );

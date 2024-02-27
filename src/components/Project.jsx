@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import fairstly_theme from "../assets/fairstly-theme.png";
 import airbnb_clone from "../assets/airbnb-clone.png";
+import malikaLkhabir_image from "../assets/malikaLkhabir_image.png";
 import "./Projects.css";
 import "../assets/Tailwind.jsx";
 import Tailwind from "../assets/Tailwind.jsx";
 import JQuery from "../assets/JQuery.jsx";
 import Liquid from "../assets/Liquid.jsx";
 import Reactsvg from "../assets/Reactsvg.jsx";
+import Vue from "../assets/Vue.jsx";
 
 export default function Project({ project }) {
   console.log(project);
@@ -20,12 +22,22 @@ export default function Project({ project }) {
         onClick={() => setIsClicked(!isClicked)}
       >
         <h1 className="text-white text-2xl">
-          {project === "shopify_theme" ? "Shopify Theme" : "Airbnb Clone"}
+          {project === "shopify_theme"
+            ? "Shopify Theme"
+            : project === "shopify_theme"
+            ? "Airbnb Clone"
+            : "Client Website"}
         </h1>
         <div className="flex">
           <img
             draggable="false"
-            src={project === "shopify_theme" ? fairstly_theme : airbnb_clone}
+            src={
+              project === "shopify_theme"
+                ? fairstly_theme
+                : project === "airbnb_clone"
+                ? airbnb_clone
+                : malikaLkhabir_image
+            }
             alt="shopify-store-img"
             className="transition-opacity duration-300 w-[800px] object-right object-cover m-5 overflow-hidden rounded-[20px] bg-transparent"
           />
@@ -34,12 +46,16 @@ export default function Project({ project }) {
               <h1 className="text-lg font-medium text-indigo-300">
                 {project === "shopify_theme"
                   ? "Shopify Store Theme"
-                  : "Airbnb Clone Project"}
+                  : project === "shopify_theme"
+                  ? "Airbnb Clone Project"
+                  : "Appointment Management Website"}
               </h1>
               <p className="text-white">
                 {project === "shopify_theme"
                   ? "This theme allows users to see the different products available and offer multiple customization options such as the number of Hero Images, bg colors, text size, fonts, and even has custom sections that can be added however needed."
-                  : "This Airbnb clone is responsive and allows multiple functionalities such as, the seach feature (that is fully functional apart from the date picker), responsive design, pop-up."}
+                  : project === "shopify_theme"
+                  ? "This Airbnb clone is responsive and allows multiple functionalities such as, the seach feature (that is fully functional apart from the date picker), responsive design, pop-up."
+                  : "This website is made to manage the appointments of a psychologist, it has 5 pages total and uses the calendly to embed their appointment system into the website and manage all the appointments automatically."}
               </p>
             </div>
           </div>
@@ -58,10 +74,19 @@ export default function Project({ project }) {
                   • Liquid <Liquid className="liquid" />
                 </li>
               </>
-            ) : (
+            ) : project === "airbnb_clone" ? (
               <>
                 <li className=" text-white md:mb-4 drop-shadow-2xl flex items-center ">
                   • React <Reactsvg className="react" />
+                </li>
+                <li className=" text-white md:mb-4 drop-shadow-2xl flex items-center ">
+                  • Tailwind <Tailwind className="tailwind" />
+                </li>
+              </>
+            ) : (
+              <>
+                <li className=" text-white md:mb-4 drop-shadow-2xl flex items-center ">
+                  • Vue <Vue className="react" />
                 </li>
                 <li className=" text-white md:mb-4 drop-shadow-2xl flex items-center ">
                   • Tailwind <Tailwind className="tailwind" />
@@ -76,7 +101,9 @@ export default function Project({ project }) {
           href={
             project === "shopify_theme"
               ? "https://fairstly-themes.myshopify.com/"
-              : "https://mohamedsefyani-airbnb.web.app/"
+              : project === "airbnb_clone"
+              ? "https://mohamedsefyani-airbnb.web.app/"
+              : "https://malikalkhabir.web.app/"
           }
           target="_blank"
           className="group text-sm md:text-lg text-white flex gap-2 items-center hover:text-indigo-500 transition-colors duration-500"
@@ -114,7 +141,9 @@ export default function Project({ project }) {
           href={
             project === "shopify_theme"
               ? "https://github.com/MohamedSefyaniLakrizi/Shopify-Theme"
-              : "https://github.com/MohamedSefyaniLakrizi/Airbnb-Clone"
+              : project === "shopify_theme"
+              ? "https://github.com/MohamedSefyaniLakrizi/Airbnb-Clone"
+              : "https://github.com/MohamedSefyaniLakrizi/malikalkhabirwebsite"
           }
           target="_blank"
           rel="noopener noreferrer"
